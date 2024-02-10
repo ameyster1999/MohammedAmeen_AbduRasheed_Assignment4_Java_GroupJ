@@ -59,10 +59,6 @@ This Java program is designed for managing student records. It allows users to p
 
 If you find issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-Feel free to customize this README to better fit your specific project and repository structure. Include information about how to contribute, any dependencies, or additional setup steps if necessary.
