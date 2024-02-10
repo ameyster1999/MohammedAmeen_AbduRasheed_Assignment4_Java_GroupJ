@@ -53,11 +53,48 @@ class StudentRecordSystem {
     }
 
     private void updateStudentRecord() {
-        // Implement logic to update an existing student record
+        System.out.print("Enter student ID to update: ");
+        int studentIdToUpdate = scanner.nextInt();
+
+        // Perform search for student by ID
+        for (Student student : studentList) {
+            if (student.getStudentId() == studentIdToUpdate) {
+                System.out.println("Enter new details for the student:");
+
+                System.out.print("First Name: ");
+                student.setFirstName(scanner.next());
+
+                System.out.print("Last Name: ");
+                student.setLastName(scanner.next());
+
+                System.out.print("Date of Birth (YYYY-MM-DD): ");
+                student.setDateOfBirth(scanner.next());
+
+                System.out.print("GPA: ");
+                student.setGpa(scanner.nextDouble());
+
+
+
+                System.out.println("Student record updated successfully.");
+                return;
+            }
+            else {
+                System.out.println("student not present in records");
+            }
+        }
+
+        System.out.println("Student with ID " + studentIdToUpdate + " not found.");
     }
 
     private void displayAllStudentRecords() {
-        // Implement logic to display all student records
+        if (studentList.isEmpty()) {
+            System.out.println("No student records available.");
+        } else {
+            System.out.println("Student Records:");
+            for (Student student : studentList) {
+                System.out.println(student.getStudentId() + ": " + student.getFirstName() + " " + student.getLastName());
+            }
+        }
     }
 
     private void searchStudentById() {
@@ -65,6 +102,17 @@ class StudentRecordSystem {
     }
 
     private void calculateAverageGPA() {
-        // Implement logic to calculate and display the average GPA of all students
+        if (studentList.isEmpty()) {
+            System.out.println("No student records available.");
+        } else {
+            double totalGPA = 0.0;
+
+            for (Student student : studentList) {
+                totalGPA += student.getGpa();
+            }
+
+            double averageGPA = totalGPA / studentList.size();
+            System.out.println("Average GPA of all students: " + averageGPA);
+        }
     }
 }
