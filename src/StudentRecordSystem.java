@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -84,7 +86,7 @@ class StudentRecordSystem {
         }
 
         Student newStudent = new Student(firstName, lastName, dateOfBirth, gpa);
-        students.add(newStudent);
+        studentList.add(newStudent);
         System.out.println("Student added successfully with ID: " + newStudent.getStudentId());
         }
     }
