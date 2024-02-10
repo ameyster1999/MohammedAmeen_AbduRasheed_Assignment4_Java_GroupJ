@@ -50,6 +50,42 @@ class StudentRecordSystem {
 
     private void addStudentRecord() {
         // Implement logic to add a new student record
+        scanner.nextLine(); 
+        System.out.println("Enter first name:");
+        String firstName = scanner.nextLine();
+
+        System.out.println("Enter last name:");
+        String lastName = scanner.nextLine();
+
+        LocalDate dateOfBirth = null;
+        while (dateOfBirth == null) {
+            System.out.println("Enter date of birth (YYYY-MM-DD):");
+            String dobString = scanner.nextLine();
+        try {
+            dateOfBirth = LocalDate.parse(dobString);
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date format. Please try again.");
+    }
+
+    double gpa = -1;
+    while (gpa < 0) {
+        System.out.println("Enter GPA:");
+        if (scanner.hasNextDouble()) {
+                gpa = scanner.nextDouble();
+                if (gpa < 0 || gpa > 4) { 
+                    // Assuming GPA is on a 0 to 4 scale
+                    System.out.println("GPA must be between 0 and 4. Please try again.");
+                    gpa = -1;
+                }
+            } else {
+                System.out.println("Invalid GPA. Please enter a number.");
+                scanner.next(); 
+            }
+        }
+
+        Student newStudent = new Student(firstName, lastName, dateOfBirth, gpa);
+        students.add(newStudent);
+        System.out.println("Student added successfully with ID: " + newStudent.getStudentId());
     }
 
     private void updateStudentRecord() {
