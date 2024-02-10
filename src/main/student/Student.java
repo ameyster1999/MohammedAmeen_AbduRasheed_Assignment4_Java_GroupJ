@@ -1,3 +1,5 @@
+package student;
+
 import java.time.LocalDate;
 
 class Student {
