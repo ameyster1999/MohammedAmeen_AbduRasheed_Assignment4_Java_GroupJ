@@ -99,6 +99,21 @@ class StudentRecordSystem {
 
     private void searchStudentById() {
         // Implement logic to search for a student by ID
+        System.out.print("Enter student ID to search: ");
+        int studentIdToSearch = scanner.nextInt();
+    
+        for (Student student : studentList) {
+            if (student.getStudentId() == studentIdToSearch) {
+                System.out.println("Student found:");
+                System.out.println("ID: " + student.getStudentId());
+                System.out.println("Name: " + student.getFirstName() + " " + student.getLastName());
+                System.out.println("Date of Birth: " + student.getDateOfBirth());
+                System.out.println("GPA: " + student.getGpa());
+                return;
+            }
+        }
+    
+        System.out.println("Student with ID " + studentIdToSearch + " not found.");
     }
 
     private void calculateAverageGPA() {
