@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.time.LocalDate;
 
 class Student {
     private static int idCounter = 1;
@@ -10,11 +9,11 @@ class Student {
     private String dateOfBirth;
     private double gpa;
 
-    public Student(String firstName, String lastName, String dateOfBirth, double gpa) {
+    public Student(String firstName, String lastName, LocalDate dateOfBirth, double gpa) {
         this.studentId = idCounter++;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = String.valueOf(dateOfBirth);
         this.gpa = gpa;
     }
 
