@@ -86,6 +86,7 @@ class StudentRecordSystem {
         Student newStudent = new Student(firstName, lastName, dateOfBirth, gpa);
         students.add(newStudent);
         System.out.println("Student added successfully with ID: " + newStudent.getStudentId());
+        }
     }
 
     private void updateStudentRecord() {
